@@ -1,0 +1,218 @@
+$black-color: #424141;
+$transparent: transparent;
+$primary-color: #d61535;
+$secondary-color: #737373;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+$container-large-desktop:      (1400px + $grid-gutter-width) !default;
+@mixin border-radius($property) {
+    -webkit-border-radius: $property;
+        -ms-border-radius: $property;
+            border-radius: $property;
+  }
+@mixin padding ($top,$right,$bottom,$left){
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+@mixin padding-all ($property){
+    padding: $property !important;
+}
+@mixin positions ($top, $right, $left, $bottom){
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom
+}
+@mixin font-size ($porperty){
+    font-size: $porperty;
+}
+@mixin margin ($top,$right,$bottom,$left){
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+@mixin border ($type, $size, $color){
+    border: $type $size $color;
+}
+body{
+    margin: 0;
+    background: #fafafa;
+}
+p{
+    @include font-size(12px)
+}
+nav {
+    background: $black-color;
+    @include border-radius(0)
+}
+.nav-menu-icon{
+    padding-top: 2px;
+}
+.container{
+    max-width: $container-large-desktop
+}
+section {
+    .mat-card {
+        background: #fff;
+        h4{
+            font-size: 1.3rem !important
+        }
+    }
+}
+.mat-sidenav{
+    width: 20%;
+}
+.sidebar-sticky{
+    .nav-link{
+        color: $black-color;
+    }
+    .nav-link:hover{
+        color: $primary-color;
+    }
+}
+.mat-stepper-horizontal{
+    background: $transparent
+}
+.fixed-buttons-bar{
+    position: fixed !important;
+    @include border-radius(0);
+    @include padding-all(15px);
+    // @parms: top, right, bottom, left
+    @include positions(auto, 0,0,0);
+    z-index: 1030;
+}
+.mat-radio-button-bordered{
+    @include border(solid, 1px, $black-color);
+    @include padding(5px,10px,7px,10px);
+    .mat-radio-label-content{
+        font-size: 13px;
+    }
+}
+.mat-radio-checked{
+    border-color: $primary-color;
+    .mat-radio-label{
+        color: $primary-color
+    }
+}
+.mat-radio-label{
+    @include margin(0,0,0,0);
+}
+.mat-divider{
+    position: relative !important;
+}
+.table-sm{
+    font-size: 14px;
+    .material-icons{
+        font-size: 19px;
+        line-height: 1.5
+    }
+    td{
+        @include padding(0, 0.3rem, 0, 0.3rem)
+    }
+}
+.mat-checkbox-layout{
+    margin-bottom: 0 !important;
+}
+.mat-step-header .mat-step-icon{
+    background-color: $primary-color !important;
+}
+.mat-horizontal-content-container{
+    @include padding-all(0px);
+}
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary{
+    background-color: $primary-color !important;
+}
+.form-title{
+    @include padding(0, 0, 7px, 0);
+    border-bottom: solid 1px $primary-color;
+    ::after{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 20px;
+        background: $primary-color;
+    }
+}
+.form-error{
+    display: block;
+    color: red !important;
+    font-size: 14px;
+}
+.mat-icon.mat-primary{
+    color: $primary-color !important;
+}
+.active-icon{
+    color: $primary-color !important;
+}
+.success-icon{
+    color: #33f113 !important;
+}
+.error-icon{
+    // color: #fb0909 !important;
+}
+.form-control{
+    @include padding(1.375rem, 0.75rem, 1.375rem, 0.75rem);
+    font-size: 14px !important;
+}
+.mat-form-field{
+    display: block;
+}
+a{
+    color: $primary-color;
+    cursor: pointer;
+    :hover{
+        text-decoration: none;
+    }
+}
+.additions{
+    p{
+        font-size: 14px;
+    }
+}
+.table-container{
+    @include padding-all(5px);
+    @include border(solid, 1px, #333);
+    .table-sm{
+        width: 100%;
+        td{
+            @include padding(0.3rem, 0.3rem, 0.3rem, 0.3rem);
+            font-size: 12px !important;
+        }
+    }
+}
+.input-group-text{
+    background: $primary-color;
+    .mat-icon{
+        color: #fff;
+    }
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+    background: $primary-color;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color: $primary-color;
+}
+.mat-checkbox-label{
+    word-break: break-all;
+}
+.long-text-checkbox .mat-checkbox-inner-container{
+    margin-top: 5px;
+    display: flex;
+    align-self: flex-start
+}
+footer{
+    background: $black-color;
+    color: #fff;
+    height: 300px;
+}
+
+@media (max-width: 576px) {
+    .mat-sidenav{
+        width: 65%;
+    }
+ }
