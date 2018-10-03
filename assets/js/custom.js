@@ -13,15 +13,16 @@ $(document).ready(function () {
     });
 
     $(".next-step").click(function (e) {
-
         var $active = $('.wizard .nav-tabs li.active');
-        $active.next().removeClass('disabled');
+        $active.removeClass('active').addClass('disabled');
+        $active.next().removeClass('disabled').addClass('active');
         nextTab($active);
 
     });
     $(".prev-step").click(function (e) {
-
         var $active = $('.wizard .nav-tabs li.active');
+        $active.removeClass('active').addClass('disabled');
+        $active.prev().removeClass('disabled').addClass('active');
         prevTab($active);
 
     });
