@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log('gulp watch..');
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
     
@@ -17,7 +18,6 @@ $(document).ready(function () {
         $active.removeClass('active').addClass('disabled');
         $active.next().removeClass('disabled').addClass('active');
         nextTab($active);
-
     });
     $(".prev-step").click(function (e) {
         var $active = $('.wizard .nav-tabs li.active');
