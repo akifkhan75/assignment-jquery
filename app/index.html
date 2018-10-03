@@ -58,283 +58,472 @@
 
   <!-- ENROLLMENT FORM -->
   <section>
-      <div class="container">
-          <div class="wizard">
-            <div class="wizard-steps mb-3">
-              <!-- <div class="connecting-line"></div> -->
-              <ul class="nav nav-tabs d-table w-100" id="myTab" role="tablist">
-                <li class="nav-item d-table-cell active">
-                  <a class="nav-link rounded-0 active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                    Select Plan
-                  </a>
-                </li>
-                <li class="nav-item d-table-cell">
-                  <a class="nav-link rounded-0" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                      Member Details
-                  </a>
-                </li>
-                <li class="nav-item d-table-cell">
-                  <a class="nav-link rounded-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                      Additions
-                  </a>
-                </li>
-                <li class="nav-item d-table-cell">
-                    <a class="nav-link rounded-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                        Checkout
-                    </a>
-                  </li>
-                  <li class="nav-item d-table-cell">
-                      <a class="nav-link rounded-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                          Confirmation
-                      </a>
-                    </li>
-              </ul>
-            </div>
-      
-            <div class="row">
-              <div class="col-sm-9">
-                  <div class="tab-content" id="myTabContent">
-                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                          <div class="col-sm-9">
-                            <div class="card shadow-sm rounded-0 p-3 mb-3">
-                              <ng-template matStepLabel class="d-none">Select Plan</ng-template>
-                              <div class="form-group row">
-                                <div class="col-sm-4 d-flex">
-                                  <i class="fas fa-check-square mt-1"></i>
-                                  <div class="ml-1">
-                                    <h4 class="mb-0">MEMBERSHIP</h4>
-                                    <small>Select A Membership Plan</small>
-                                    
-                                  </div>
-                                </div>
-                                <div class="col-sm-8">
-                                  <div class="row">
-                                    <div class="col-sm-6">
-                                      <strong>TRAVEL</strong>
-                                      <p>
-                                        Travel Memberships provide medical advisory and evacuation, field rescue and intelligence services for travelers more than
-                                        100 miles from home. Security advisory and evacuation coverage upgrades are also available.
-                                      </p>
-                                    </div>
-                                    <div class="col-sm-6">
-                                      <strong>TOTALCARE</strong>
-                                      <p>
-                                        TotalCareSM Memberships provide 24x7 access to world-class virtual healthcare, including Urgent and Specialty consults. This
-                                        membership includes all of the features of Travel Membership.
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="bordered-radio-buttons d-flex justify-content-around">
-                                      <input type="radio" name="membership" id="free" value="travel"><label for="free" class="shadow-sm">TRAVEL</label>
-                                      <input type="radio" name="membership" id="basic" value="totalcare" checked><label for="basic" class="shadow-sm">TOTALCARE</label>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="dropdown-divider"></div>
-                              <div class="form-group row mt-2">
-                                <div class="col-sm-4 d-flex">
-                                    <i class="fas fa-check-square mt-1"></i>
-                                  <div class="ml-1">
-                                    <h4 class="mb-0">TYPE</h4>
-                                    
-                                  </div>
-                                </div>
-                                <div class="col-sm-8">
-                                  <div class="bordered-radio-buttons d-flex justify-content-between">
-                                      <input type="radio" name="type" id="indivisual" value="indivisual"><label for="indivisual" class="shadow-sm">INDIVISUAL</label>
-                                      <input type="radio" name="type" id="family" value="family" checked><label for="family" class="shadow-sm">FAMILY</label>
-                                      <input type="radio" name="type" id="student" value="student" checked><label for="student" class="shadow-sm">STUDENT</label>
-                                      <input type="radio" name="type" id="age 75-85" value="age 75-85" checked><label for="age 75-85" class="shadow-sm">AGE 75-85</label>
-                                    </div>
-                                  <p>Individual Travel Memberships cover members of all nationalities under the age of 75 (85 with our Extended
-                                    Plan) who are traveling more than 100 miles from home worldwide.</p>
-                                </div>
-                              </div>
-                              <div class="dropdown-divider"></div>
-                              <div class="form-group row mt-2">
-                                <div class="col-sm-4 d-flex">
-                                    <i class="fas fa-check-square mt-1"></i>
-                                  <div class="ml-1">
-                                    <h4 class="mb-0">TERM</h4>
-                                    
-                                  </div>
-                                </div>
-                                <div class="col-sm-8">
-                                  <div class="bordered-radio-buttons d-flex justify-content-between">
-                                      <input type="radio" name="term" id="2 YEARS" value="2 YEARS"><label for="2 YEARS" class="shadow-sm">2 YEARS</label>
-                                      <input type="radio" name="term" id="7 DAYS" value="7 DAYS" checked><label for="7 DAYS" class="shadow-sm">7 DAYS</label>
-                                      <input type="radio" name="term" id="14 DAYS" value="14 DAYS" checked><label for="14 DAYS" class="shadow-sm">14 DAYS</label>
-                                      <input type="radio" name="term" id="30 DAYS" value="30 DAYS" checked><label for="30 DAYS" class="shadow-sm">30 DAYS</label>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="dropdown-divider"></div>
-                              <div class="form-group row mt-2">
-                                <div class="col-sm-4 d-flex">
-                                  <i class="fas fa-check-square mt-1"></i>
-                                  <div class="ml-1">
-                                    <h4 class="mb-0">MAX TRIP LENGTH</h4>
-                                    <small>You may take as many trips as you like. Select the maximum number of days per trip.</small>
-                                    
-                                  </div>
-                                </div>
-                                <div class="col-sm-8">
-                                  <div class="bordered-radio-buttons d-flex justify-content-between">
-                                      <input type="radio" name="maxTripLength" id="45 DAYS" value="45 DAYS"><label for="45 DAYS" class="shadow-sm">45 DAYS</label>
-                                      <input type="radio" name="maxTripLength" id="90 DAYS" value="90 DAYS" checked><label for="90 DAYS" class="shadow-sm">90 DAYS</label>
-                                      <input type="radio" name="maxTripLength" id="180 DAYS" value="180 DAYS" checked><label for="180 DAYS" class="shadow-sm">180 DAYS</label>
-                                      <input type="radio" name="maxTripLength" id="360 DAYS" value="360 DAYS" checked><label for="360 DAYS" class="shadow-sm">360 DAYS</label>
-                                    </div>
-                                </div>
-                              </div>
-                              <div class="dropdown-divider"></div>
-                              <div class="form-group row mt-2">
-                                <div class="col-sm-4 d-flex">
-                                    <i class="fas fa-check-square mt-1"></i>
-                                  <div class="ml-1">
-                                    <h4 class="mb-0">SECURITY MEMBERSHIP ADD-ON</h4>
-                                  </div>
-                                </div>
-                                <div class="col-sm-8">
-                                  <p>Our military special operations veterans will extract our members in danger of bodily harm from war,
-                                    civil unrest, natural disasters, government evacuation orders and other security emergencies.</p>
-                                  <mat-checkbox formControlName="memberShipSecurity">I would like to add security</mat-checkbox>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-3">
-                            <div class="card shadow-sm rounded-0">
-                                    <h4 class="mb-2">Summary</h4>
-                                    <div class="dropdown-divider"></div>
-                                    <table class="table-sm mt-2 mb-4">
-                                      <tr>
-                                        <td>
-                                            <i class="fas fa-check"></i>
-                                        </td>
-                                        <td>Membership</td>
-                                        <td>
-                                          &nbsp;
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                            <i class="fas fa-check"></i>
-                                        </td>
-                                        <td>Type</td>
-                                        <td>
-                                          &nbsp;
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                            <i class="fas fa-check"></i>
-                                        </td>
-                                        <td>Term</td>
-                                        <td>
-                                          &nbsp;
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                            <i class="fas fa-check"></i>
-                                        </td>
-                                        <td>Max Trip Length</td>
-                                        <td>
-                                          &nbsp;
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="d-flex align-items-center justify-content-between my-3">
-                                      <mat-checkbox>Auto Renew</mat-checkbox>
-                                      <mat-icon color="primary">help</mat-icon>
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="my-2">
-                                      <h5>Membership</h5>
-                                      <h4>$ 0.00</h4>
-                                    </div>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="my-2">
-                                      <h5>Grand Total</h5>
-                                      <h4>$ 0.00</h4>
-                                    </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- form footer -->
-                        <div class="card shadow-sm rounded-0 fixed-buttons-bar mb-0">
-                          <div class="container d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 d-block">Need Help? Call us at:
-                              <span class="text-danger">+1 617-459-4200</span>
-                            </h5>
-                            <div class="d-block d-sm-flex align-items-center">
-                              <div class="d-inline-block mr-3">
-                                <b>Pyment Due</b>
-                                <h5 class="mb-0">$0.00</h5>
-                              </div>
-                              <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- / form footer -->
-                      </div>
-                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <h1>step 2</h1>
-                        <!-- form footer -->
-                        <div class="card shadow-sm rounded-0 fixed-buttons-bar">
-                            <div class="container d-flex justify-content-between align-items-center">
-                              <h5 class="mb-0 d-block">Need Help? Call us at:
-                                <span class="text-danger">+1 617-459-4200</span>
-                              </h5>
-                              <div class="d-block d-sm-flex align-items-center">
-                                <div class="d-inline-block mr-3">
-                                  <b>Pyment Due</b>
-                                  <h5 class="mb-0">$0.00</h5>
-                                </div>
-                                <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
-                                <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- / form footer -->
-                      </div>
-                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <h1>step 3</h1>
-                        <!-- form footer -->
-                        <div class="card shadow-sm rounded-0 fixed-buttons-bar">
-                            <div class="container d-flex justify-content-between align-items-center">
-                              <h5 class="mb-0 d-block">Need Help? Call us at:
-                                <span class="text-danger">+1 617-459-4200</span>
-                              </h5>
-                              <div class="d-block d-sm-flex align-items-center">
-                                <div class="d-inline-block mr-3">
-                                  <b>Pyment Due</b>
-                                  <h5 class="mb-0">$0.00</h5>
-                                </div>
-                                <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
-                                <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- / form footer -->
+    <div class="container">
+      <div class="wizard">
+        <div class="wizard-steps mb-3">
+          <!-- <div class="connecting-line"></div> -->
+          <ul class="nav nav-tabs d-table w-100" id="membershipForm" role="tablist">
+            <li class="nav-item d-table-cell active">
+              <a class="nav-link rounded-0 active" id="selectPlan-tab" data-toggle="tab" href="#selectPlan" role="tab" aria-controls="selectPlan"
+                aria-selected="true">
+                Select Plan
+              </a>
+            </li>
+            <li class="nav-item d-table-cell">
+              <a class="nav-link rounded-0" id="memberDetails-tab" data-toggle="tab" href="#memberDetails" role="tab" aria-controls="memberDetails"
+                aria-selected="false">
+                Member Details
+              </a>
+            </li>
+            <li class="nav-item d-table-cell">
+              <a class="nav-link rounded-0" id="additions-tab" data-toggle="tab" href="#additions" role="tab" aria-controls="additions"
+                aria-selected="false">
+                Additions
+              </a>
+            </li>
+            <li class="nav-item d-table-cell">
+              <a class="nav-link rounded-0" id="checkOut-tab" data-toggle="tab" href="#checkOut" role="tab" aria-controls="checkOut" aria-selected="false">
+                Checkout
+              </a>
+            </li>
+            <li class="nav-item d-table-cell">
+              <a class="nav-link rounded-0" id="confirmation-tab" data-toggle="tab" href="#confirmation" role="tab" aria-controls="confirmation"
+                aria-selected="false">
+                Confirmation
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-9">
+            <!-- tab content -->
+            <div class="tab-content" id="membershipFormContent">
+              <!-- slelct plan -->
+              <div class="tab-pane fade show active" id="selectPlan" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card shadow-sm rounded-0 p-3 mb-3">
+                  <ng-template matStepLabel class="d-none">Select Plan</ng-template>
+                  <div class="form-group row">
+                    <div class="col-sm-4 d-flex">
+                      <i class="fas fa-check-square mt-1"></i>
+                      <div class="ml-1">
+                        <h4 class="mb-0">MEMBERSHIP</h4>
+                        <small>Select A Membership Plan</small>
+
                       </div>
                     </div>
-              </div>
-              <div class="col-sm-3">summary</div>
-            </div>
-        
-            
+                    <div class="col-sm-8">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <strong>TRAVEL</strong>
+                          <p>
+                            Travel Memberships provide medical advisory and evacuation, field rescue and intelligence services for travelers more than
+                            100 miles from home. Security advisory and evacuation coverage upgrades are also available.
+                          </p>
+                        </div>
+                        <div class="col-sm-6">
+                          <strong>TOTALCARE</strong>
+                          <p>
+                            TotalCareSM Memberships provide 24x7 access to world-class virtual healthcare, including Urgent and Specialty consults. This
+                            membership includes all of the features of Travel Membership.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bordered-radio-buttons d-flex justify-content-around">
+                        <input type="radio" name="membership" id="free" value="travel">
+                        <label for="free" class="shadow-sm">TRAVEL</label>
+                        <input type="radio" name="membership" id="basic" value="totalcare" checked>
+                        <label for="basic" class="shadow-sm">TOTALCARE</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="form-group row mt-2">
+                    <div class="col-sm-4 d-flex">
+                      <i class="fas fa-check-square mt-1"></i>
+                      <div class="ml-1">
+                        <h4 class="mb-0">TYPE</h4>
 
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="bordered-radio-buttons d-flex justify-content-between">
+                        <input type="radio" name="type" id="indivisual" value="indivisual">
+                        <label for="indivisual" class="shadow-sm">INDIVISUAL</label>
+                        <input type="radio" name="type" id="family" value="family" checked>
+                        <label for="family" class="shadow-sm">FAMILY</label>
+                        <input type="radio" name="type" id="student" value="student" checked>
+                        <label for="student" class="shadow-sm">STUDENT</label>
+                        <input type="radio" name="type" id="age 75-85" value="age 75-85" checked>
+                        <label for="age 75-85" class="shadow-sm">AGE 75-85</label>
+                      </div>
+                      <p>Individual Travel Memberships cover members of all nationalities under the age of 75 (85 with our Extended
+                        Plan) who are traveling more than 100 miles from home worldwide.</p>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="form-group row mt-2">
+                    <div class="col-sm-4 d-flex">
+                      <i class="fas fa-check-square mt-1"></i>
+                      <div class="ml-1">
+                        <h4 class="mb-0">TERM</h4>
+
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="bordered-radio-buttons d-flex justify-content-between">
+                        <input type="radio" name="term" id="2 YEARS" value="2 YEARS">
+                        <label for="2 YEARS" class="shadow-sm">2 YEARS</label>
+                        <input type="radio" name="term" id="7 DAYS" value="7 DAYS" checked>
+                        <label for="7 DAYS" class="shadow-sm">7 DAYS</label>
+                        <input type="radio" name="term" id="14 DAYS" value="14 DAYS" checked>
+                        <label for="14 DAYS" class="shadow-sm">14 DAYS</label>
+                        <input type="radio" name="term" id="30 DAYS" value="30 DAYS" checked>
+                        <label for="30 DAYS" class="shadow-sm">30 DAYS</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="form-group row mt-2">
+                    <div class="col-sm-4 d-flex">
+                      <i class="fas fa-check-square mt-1"></i>
+                      <div class="ml-1">
+                        <h4 class="mb-0">MAX TRIP LENGTH</h4>
+                        <small>You may take as many trips as you like. Select the maximum number of days per trip.</small>
+
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="bordered-radio-buttons d-flex justify-content-between">
+                        <input type="radio" name="maxTripLength" id="45 DAYS" value="45 DAYS">
+                        <label for="45 DAYS" class="shadow-sm">45 DAYS</label>
+                        <input type="radio" name="maxTripLength" id="90 DAYS" value="90 DAYS" checked>
+                        <label for="90 DAYS" class="shadow-sm">90 DAYS</label>
+                        <input type="radio" name="maxTripLength" id="180 DAYS" value="180 DAYS" checked>
+                        <label for="180 DAYS" class="shadow-sm">180 DAYS</label>
+                        <input type="radio" name="maxTripLength" id="360 DAYS" value="360 DAYS" checked>
+                        <label for="360 DAYS" class="shadow-sm">360 DAYS</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="form-group row mt-2">
+                    <div class="col-sm-4 d-flex">
+                      <i class="fas fa-check-square mt-1"></i>
+                      <div class="ml-1">
+                        <h4 class="mb-0">SECURITY MEMBERSHIP ADD-ON</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <p>Our military special operations veterans will extract our members in danger of bodily harm from war,
+                        civil unrest, natural disasters, government evacuation orders and other security emergencies.</p>
+                      <mat-checkbox formControlName="memberShipSecurity">I would like to add security</mat-checkbox>
+                    </div>
+                  </div>
+                </div>
+                <!-- form footer -->
+                <div class="card shadow-sm rounded-0 fixed-buttons-bar mb-0">
+                  <div class="container d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 d-block">Need Help? Call us at:
+                      <span class="text-danger">+1 617-459-4200</span>
+                    </h5>
+                    <div class="d-block d-sm-flex align-items-center">
+                      <div class="d-inline-block mr-3">
+                        <b>Pyment Due</b>
+                        <h5 class="mb-0">$0.00</h5>
+                      </div>
+                      <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- / form footer -->
+              </div>
+              <!-- / slelct plan -->
+
+              <!-- member details -->
+              <div class="tab-pane fade" id="memberDetails" role="tabpanel" aria-labelledby="profile-tab">
+
+                <div class="card shadow-sm rounded-0 p-3 mb-3">
+                  <h4 class="form-title">PRIMARY INFORMATION</h4>
+                  <div class="form-group row">
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="First Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Last Name">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Phone Number">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Birth Date">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Membership Start Date">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Satellite Phone">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-3">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" name="gender" class="option-input radio" checked />
+                              Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" class="option-input radio" checked />
+                                Female
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                  <h4 class="form-title mt-3">RESIDENCE ADDRESS</h4>
+                  <div class="google-address">
+                    <div class="form-group row mt-3 google-address">
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Search Address">
+                      </div>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Zip Code">
+                      </div>
+                    </div>
+                    <div>
+                      <a href="">Can't find? Enter manually.</a>
+                    </div>
+                  </div>
+                  <div class="mannual-address mb-3">
+                    <div class="form-group row mt-3">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Address 1">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Address 2">
+                      </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Search Your City">
+                      </div>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Zip Code">
+                      </div>
+                    </div>
+                    <div>
+                      <a href="">Search using Google</a>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                  <h4 class="form-title mt-3">MAILING ADDRESS</h4>
+                  <div class="form-field mb-3">
+                    <mat-checkbox>Same as residence address</mat-checkbox>
+                  </div>
+                  <mat-divider></mat-divider>
+                  <h4 class="form-title mt-3">FAMILY MEMBERS</h4>
+                  <div class="form-field" *ngIf="!addFamilyForm">
+                    <a class="d-flex align-items-center" (click)="addFamilyForm = true">
+                      <mat-icon class="active-icon mr-1">add_circle</mat-icon> Add Family Members</a>
+                  </div>
+                  <div *ngIf="addFamilyForm">
+                    <div class="form-group row mt-3">
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="First Name">
+                      </div>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Last Name">
+                      </div>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Birth Date">
+                      </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control rounded-0 shadow-sm" placeholder="Email">
+                      </div>
+                      <div class="col-sm-3">
+                        <mat-radio-group class="d-flex justify-content-between">
+                          <mat-radio-button value="1">Dependent</mat-radio-button>
+                          <mat-radio-button value="2">Spouse</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+                      <div class="col-sm-3 offset-sm-1">
+                        <mat-radio-group class="d-flex justify-content-between">
+                          <mat-radio-button value="1">Male</mat-radio-button>
+                          <mat-radio-button value="2">Female</mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+                    </div>
+                    <div class="buttons">
+                      <button mat-button mat-raised-button color="primary" class="mr-1">Save</button>
+                      <button mat-button mat-raised-button (click)="addFamilyForm = false">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- form footer -->
+                <div class="card shadow-sm rounded-0 fixed-buttons-bar mb-0">
+                  <div class="container d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 d-block">Need Help? Call us at:
+                      <span class="text-danger">+1 617-459-4200</span>
+                    </h5>
+                    <div class="d-block d-sm-flex align-items-center">
+                      <div class="d-inline-block mr-3">
+                        <b>Pyment Due</b>
+                        <h5 class="mb-0">$0.00</h5>
+                      </div>
+                      <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
+                      <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- / form footer -->
+              </div>
+              <!-- / member details -->
+
+              <!-- additions -->
+              <div class="tab-pane fade" id="additions" role="tabpanel" aria-labelledby="contact-tab">
+                <h1>step 3</h1>
+                <!-- form footer -->
+                <div class="card shadow-sm rounded-0 fixed-buttons-bar">
+                  <div class="container d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 d-block">Need Help? Call us at:
+                      <span class="text-danger">+1 617-459-4200</span>
+                    </h5>
+                    <div class="d-block d-sm-flex align-items-center">
+                      <div class="d-inline-block mr-3">
+                        <b>Pyment Due</b>
+                        <h5 class="mb-0">$0.00</h5>
+                      </div>
+                      <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
+                      <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- / form footer -->
+              </div>
+              <!-- / additions -->
+
+              <!-- checkout -->
+              <div class="tab-pane fade" id="checkout" role="tabpanel" aria-labelledby="contact-tab">
+                <h1>step 3</h1>
+                <!-- form footer -->
+                <div class="card shadow-sm rounded-0 fixed-buttons-bar">
+                  <div class="container d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 d-block">Need Help? Call us at:
+                      <span class="text-danger">+1 617-459-4200</span>
+                    </h5>
+                    <div class="d-block d-sm-flex align-items-center">
+                      <div class="d-inline-block mr-3">
+                        <b>Pyment Due</b>
+                        <h5 class="mb-0">$0.00</h5>
+                      </div>
+                      <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
+                      <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- / form footer -->
+              </div>
+              <!-- / checkout -->
+
+              <!-- confirmation -->
+              <div class="tab-pane fade" id="confirmation" role="tabpanel" aria-labelledby="contact-tab">
+                <h1>step 3</h1>
+                <!-- form footer -->
+                <div class="card shadow-sm rounded-0 fixed-buttons-bar">
+                  <div class="container d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 d-block">Need Help? Call us at:
+                      <span class="text-danger">+1 617-459-4200</span>
+                    </h5>
+                    <div class="d-block d-sm-flex align-items-center">
+                      <div class="d-inline-block mr-3">
+                        <b>Pyment Due</b>
+                        <h5 class="mb-0">$0.00</h5>
+                      </div>
+                      <button type="button" class="btn btn-secondary shadow-sm rounded-0 prev-step">Back</button>
+                      <button type="button" class="btn btn-primary shadow-sm rounded-0 next-step">Save and continue</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- / form footer -->
+              </div>
+              <!-- / confirmation -->
+            </div>
+            <!-- /tab content -->
+          </div>
+          <div class="col-sm-3">
+            <div class="card shadow-sm rounded-0">
+              <h4 class="mb-2">Summary</h4>
+              <div class="dropdown-divider"></div>
+              <table class="table-sm mt-2 mb-4">
+                <tr>
+                  <td>
+                    <i class="fas fa-check"></i>
+                  </td>
+                  <td>Membership</td>
+                  <td>
+                    &nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-check"></i>
+                  </td>
+                  <td>Type</td>
+                  <td>
+                    &nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-check"></i>
+                  </td>
+                  <td>Term</td>
+                  <td>
+                    &nbsp;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <i class="fas fa-check"></i>
+                  </td>
+                  <td>Max Trip Length</td>
+                  <td>
+                    &nbsp;
+                  </td>
+                </tr>
+              </table>
+              <div class="dropdown-divider"></div>
+              <div class="d-flex align-items-center justify-content-between my-3">
+                <mat-checkbox>Auto Renew</mat-checkbox>
+                <mat-icon color="primary">help</mat-icon>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="my-2">
+                <h5>Membership</h5>
+                <h4>$ 0.00</h4>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="my-2">
+                <h5>Grand Total</h5>
+                <h4>$ 0.00</h4>
+              </div>
+            </div>
           </div>
         </div>
+
+
+
+      </div>
+    </div>
   </section>
   <!-- / ENTOLLMENT FORM -->
 
   <style>
-    
   </style>
 
 

@@ -150,11 +150,11 @@ nav {
 .success-icon{
     color: #33f113 !important;
 }
-.error-icon{
-    // color: #fb0909 !important;
-}
+// .error-icon{
+//     color: #fb0909 !important;
+// }
 .form-control{
-    @include padding(1.375rem, 0.75rem, 1.375rem, 0.75rem);
+    @include padding(0.75rem, 0.75rem, 0.75rem, 0.75rem);
     font-size: 14px !important;
 }
 .mat-form-field{
@@ -268,6 +268,81 @@ a{
 	top: -10px;
 	right: -10px;
 }
+
+@keyframes click-wave {
+    0% {
+      height: 40px;
+      width: 40px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 200px;
+      width: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0;
+    }
+  }
+  
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .option-input:hover {
+    background: #9faab7;
+  }
+  .option-input:checked {
+    background: $primary-color;
+    &::before {
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        content: "✔";
+        display: inline-block;
+        font-size: 26.66667px;
+        text-align: center;
+        line-height: 30px;
+    }
+    &::after {
+        -webkit-animation: click-wave 0.65s;
+        -moz-animation: click-wave 0.65s;
+        animation: click-wave 0.65s;
+        background: $primary-color;
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+    }
+  }
+
+  .option-input.radio {
+    border-radius: 50%;
+    &::after {
+        border-radius: 50%;
+      }
+  }
+
 footer{
     background: $black-color;
     color: #fff;

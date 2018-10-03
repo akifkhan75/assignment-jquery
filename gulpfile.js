@@ -12,6 +12,7 @@ gulp.task('default', function(){
 });
 
 gulp.task('sass',function(){
+	console.log('sass')
 	return gulp.src('app/assets/sass/*.scss')
 	.pipe(sass())
 	.pipe(sass().on('error', sass.logError))
@@ -19,12 +20,6 @@ gulp.task('sass',function(){
 	.pipe(browserSync.reload({
 		stream: true
 	}));
-});
-
-gulp.task('watch', ['sass','useref','browserSync','images'], function(){
-	gulp.watch('app/sass/*.scss', ['sass']);
-	gulp.watch('app/*.html', browserSync.reload);
-	gulp.watch('app/js/*.js', browserSync.reload);
 });
 
 gulp.task('browserSync', function(){
@@ -61,6 +56,12 @@ gulp.task('images', function(){
 	    })
 	]))
 	.pipe(gulp.dest('dist/'))
+});
+
+gulp.task('watch', ['sass','useref','browserSync','images'], function(){
+	gulp.watch('app/sass/*.scss', ['sass']);
+	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch('app/js/*.js', browserSync.reload);
 });
 
 gulp.task('build',['watch'], function(){
