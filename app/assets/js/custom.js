@@ -115,8 +115,13 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
 
+    // disable radio buttons
+    // $('#planSelectForm .form-group:first-child')
+    
     // change form icons and summary on radio select
     $('#planSelectForm input[type=radio]').on('change',function(){
+        // var prevRadioValue = $(this).closest('.form-group').prev('.form-group').text('test');
+        // console.log('prev radio val',prevRadioValue);
         switch($(this).attr('name')){
             case  'membership' :
             $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>');
@@ -140,7 +145,6 @@ $(document).ready(function () {
             break;
 
         }
-        console.log('radio value',$(this).val())
     })
     
 });
@@ -165,4 +169,10 @@ function nextTab(elem) {
 }
 function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+
+// show snackbar
+function showSnackbar() {
+    $('#snackbar').addClass('show');
+    setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
 }
