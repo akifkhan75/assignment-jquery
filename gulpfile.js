@@ -7,7 +7,7 @@ var gulpif = require('gulp-if');
 var cssNano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('default', function(){
+gulp.task('default', ['watch'], function(){
 	console.log('Hello World..');
 });
 
@@ -22,10 +22,16 @@ gulp.task('sass',function(){
 	}));
 });
 
+gulp.task('watch', ['sass','useref','browserSync','images'], function(){
+	gulp.watch('app/sass/*.scss', ['sass']);
+	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch('app/js/*.js', browserSync.reload);
+});
+
 gulp.task('browserSync', function(){
 	browserSync.init({
 		server:{
-			baseDir: 'dist'
+			baseDir: 'dest'
 		},
 	})
 });
@@ -35,33 +41,13 @@ gulp.task('useref', function(){
 	.pipe(useref())
 	.pipe(gulpif('*.js',uglify()))
 	.pipe(gulpif('*.css',cssNano()))
-	.pipe(gulp.dest('dist/'))
+	.pipe(gulp.dest('dest/'))
 });
 
 gulp.task('images', function(){
-	return gulp.src('app/images/*.+(png|jpg|gif|svg|jpeg)')
-	.pipe(imagemin({
-	    // Setting interlaced to true
-	    interlaced: true
-    }))
-	.pipe(imagemin([
-	    imagemin.gifsicle({interlaced: true}),
-	    imagemin.jpegtran({progressive: true}),
-	    imagemin.optipng({optimizationLevel: 5}),
-	    imagemin.svgo({
-	        plugins: [
-	            {removeViewBox: true},
-	            {cleanupIDs: false}
-	        ]
-	    })
-	]))
-	.pipe(gulp.dest('dist/'))
-});
-
-gulp.task('watch', ['sass','useref','browserSync','images'], function(){
-	gulp.watch('app/sass/*.scss', ['sass']);
-	gulp.watch('app/*.html', browserSync.reload);
-	gulp.watch('app/js/*.js', browserSync.reload);
+	return gulp.src('app/img/*.+(png|jpg|gif|svg|jpeg)')
+	.pipe(imagemin())
+	.pipe(gulp.dest('dest/img'))
 });
 
 gulp.task('build',['watch'], function(){

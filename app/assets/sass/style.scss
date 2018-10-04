@@ -136,10 +136,13 @@ nav {
         background: $primary-color;
     }
 }
-.form-error{
+.form-error, form .error{
     display: block;
     color: red !important;
     font-size: 14px;
+}
+input[type=text].error,input[type=email].error{
+    border-color: red;
 }
 .mat-icon.mat-primary{
     color: $primary-color !important;
@@ -183,11 +186,37 @@ a{
         }
     }
 }
-.input-group-text{
-    background: $primary-color;
+
+.input-group {
+    .form-control{
+        border-right: none;
+    }
+    label.error{
+        position: absolute;
+        top: 100%;
+    }
+}
+// .error + .input-group-append .input-group-text{
+//         border-color: red;
+//         &+ i{
+//             color: red;
+//         }
+//     }
+// .valid + .input-group-append .input-group-text{
+//     border-color: red !important;
+//     &+ i{
+//         color: red !important;
+//     }
+// }
+.form-group .input-group-text{
+    background: transparent;
+    border-left: none;
     .mat-icon{
         color: #fff;
     }
+}
+.input-group-text{
+    background: $primary-color;
 }
 .mat-radio-button.mat-accent .mat-radio-inner-circle,
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
@@ -231,28 +260,18 @@ a{
         }
     }
 }
-.bordered-radio-buttons input{
-	display: none;
-}
+// .bordered-radio-buttons input{
+// 	display: none;
+// }
 
 .bordered-radio-buttons label{
-	position: relative;
-	color: #fff;
-	background-color: #aaa;
-	font-size: 14px;
-    text-align: center;
-    @include padding(8px, 24px, 8px, 24px);
-	display: block;
-	cursor: pointer;
-	border: 3px solid transparent;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    border: solid 1px #424141;
+    @include padding(0, 10px, 9px, 10px);
 }
 
 .bordered-radio-buttons input:checked + label{
-	// border: 1px solid #333;
-	background-color: $primary-color;
+    background-color: $primary-color;
+    border-color: $primary-color !important;
 }
 
 .bordered-radio-buttons input:checked + label:after{
@@ -292,12 +311,12 @@ a{
     -o-appearance: none;
     appearance: none;
     position: relative;
-    top: 13.33333px;
+    top: 9.33333px;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 30px;
-    width: 30px;
+    height: 27px;
+    width: 27px;
     transition: all 0.15s ease-out 0s;
     background: #cbd1d8;
     border: none;
@@ -315,19 +334,24 @@ a{
   .option-input:checked {
     background: $primary-color;
     &::before {
-        height: 30px;
-        width: 30px;
+        height: 15px;
+        width: 15px;
         position: absolute;
-        content: "✔";
+        content: "";
         display: inline-block;
         font-size: 26.66667px;
         text-align: center;
         line-height: 30px;
+        background: white;
+        border-radius: 100%;
+        // top: 19.156%;
+        // left: 21.97%;
+        margin: 6px;
     }
     &::after {
-        -webkit-animation: click-wave 0.65s;
-        -moz-animation: click-wave 0.65s;
-        animation: click-wave 0.65s;
+        -webkit-animation: click-wave 0.45s;
+        -moz-animation: click-wave 0.45s;
+        animation: click-wave 0.45s;
         background: $primary-color;
         content: '';
         display: block;
@@ -352,5 +376,19 @@ footer{
 @media (max-width: 576px) {
     .mat-sidenav{
         width: 65%;
+    }
+    h5{
+        font-size: 1rem;
+    }
+    .wizard-steps{
+        .nav-tabs{
+            display: block !important;
+            .nav-item{
+                display: none !important;
+            }
+            .nav-item.active{
+                display: block !important;
+            }
+        }
     }
  }
