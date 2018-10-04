@@ -120,8 +120,13 @@ $(document).ready(function () {
     
     // change form icons and summary on radio select
     $('#planSelectForm input[type=radio]').on('change',function(){
-        // var prevRadioValue = $(this).closest('.form-group').prev('.form-group').text('test');
-        // console.log('prev radio val',prevRadioValue);
+        var prevRadio = $(this).closest('.form-group').prevAll('.form-group').find('input[type=radio]').is(':checked');
+        if(prevRadio == false){
+            // prevRadio.attr(':checked',false);
+            var msg = 'Please Select Previous Value';
+            showSnackbar(msg)
+            return false
+        }
         switch($(this).attr('name')){
             case  'membership' :
             $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>');
@@ -172,7 +177,7 @@ function prevTab(elem) {
 }
 
 // show snackbar
-function showSnackbar() {
-    $('#snackbar').addClass('show');
+function showSnackbar(msg) {
+    $('#snackbar').addClass('show').text(msg);
     setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
 }
