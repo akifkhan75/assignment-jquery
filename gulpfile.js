@@ -31,7 +31,7 @@ gulp.task('watch', ['sass','useref','browserSync','images'], function(){
 gulp.task('browserSync', function(){
 	browserSync.init({
 		server:{
-			baseDir: 'dest'
+			baseDir: 'dist'
 		},
 	})
 });
@@ -41,13 +41,13 @@ gulp.task('useref', function(){
 	.pipe(useref())
 	.pipe(gulpif('*.js',uglify()))
 	.pipe(gulpif('*.css',cssNano()))
-	.pipe(gulp.dest('dest/'))
+	.pipe(gulp.dest('dist/'))
 });
 
 gulp.task('images', function(){
 	return gulp.src('app/img/*.+(png|jpg|gif|svg|jpeg)')
 	.pipe(imagemin())
-	.pipe(gulp.dest('dest/img'))
+	.pipe(gulp.dest('dist/img'))
 });
 
 gulp.task('build',['watch'], function(){

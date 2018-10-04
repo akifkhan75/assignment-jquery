@@ -9,8 +9,7 @@
   <!-- Bootstrap CSS -->
   <!-- build:css assets/css/style-buldle.min.css -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="assets/css/sidebar.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- endbuild -->
@@ -23,9 +22,11 @@
   <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
-      <div class="d-block" id="dismiss">
-        <i class="fas fa-arrow-left"></i>
-      </div>
+      <div class="d-flex justify-content-end">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+    </div>
       <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link active text-uppercase" href="#">
@@ -48,10 +49,10 @@
     <!-- Page Content  -->
     <div id="content">
 
-      <a id="sidebarCollapse">
+      <!-- <a id="sidebarCollapse">
         <i class="fas fa-align-left"></i>
         <span>Toggle Sidebar</span>
-      </a>
+      </a> -->
 
       <!-- HEADER -->
       <header>
@@ -144,6 +145,9 @@
                             <div class="ml-1">
                               <h4 class="mb-0">MEMBERSHIP</h4>
                               <small>Select A Membership Plan</small>
+                              <i class="form-error custom-error" id="memberShipError">
+                                Please Select an Option.
+                              </i>
                             </div>
                           </div>
                           <div class="col-sm-8">
@@ -165,7 +169,7 @@
                             </div>
                             <div class="radio bordered-radio-buttons d-flex justify-content-around">
                               <label class="mr-3">
-                                <input type="radio" class="option-input radio" name="membership" id="travel" value="travel" /> TRAVEL
+                                <input type="radio" class="option-input radio" name="membership" id="travel" value="travel" required/> TRAVEL
                               </label>
                               <label>
                                 <input type="radio" class="option-input radio" name="membership" id="totalCare" value="totalcare" /> TOTALCARE
@@ -185,7 +189,7 @@
                           <div class="col-sm-8">
                             <div class="radio bordered-radio-buttons d-block d-sm-flex justify-content-between mt-2">
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="type" id="indivisual" value="indivisual" /> INDIVISUAL
+                                <input type="radio" class="option-input radio" name="type" id="indivisual" value="indivisual" required/> INDIVISUAL
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
                                 <input type="radio" class="option-input radio" name="type" id="family" value="family" /> FAMILY
@@ -213,7 +217,7 @@
                           <div class="col-sm-8">
                             <div class="radio bordered-radio-buttons d-block d-sm-flex justify-content-between mt-2">
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="term" id="2 YEARS" value="2 YEARS" /> 2 YEARS
+                                <input type="radio" class="option-input radio" name="term" id="2 YEARS" value="2 YEARS" required/> 2 YEARS
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
                                 <input type="radio" class="option-input radio" name="term" id="7 DAYS" value="7 DAYS" /> 7 DAYS
@@ -240,7 +244,7 @@
                           <div class="col-sm-8">
                             <div class="radio bordered-radio-buttons d-block d-sm-flex justify-content-between mt-2">
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="maxTripLength" id="45 DAYS" value="45 DAYS" /> 45 DAYS
+                                <input type="radio" class="option-input radio" name="maxTripLength" id="45 DAYS" value="45 DAYS" required/> 45 DAYS
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
                                 <input type="radio" class="option-input radio" name="maxTripLength" id="90 DAYS" value="90 DAYS" /> 90 DAYS
@@ -267,7 +271,7 @@
                               war, civil unrest, natural disasters, government evacuation orders and other security emergencies.</p>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" class="option-input checkbox"> I would like to add security
+                                <input type="checkbox" name="security" class="option-input checkbox"> I would like to add security
                               </label>
                             </div>
                           </div>
@@ -869,7 +873,7 @@
   <!-- Optional JavaScript -->
   <!--build:js assets/js/script-buldle.min.js -->
   <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
-  <script src="../node_modules/popper.js/dist/popper.min.js"></script>
+  <!-- <script src="../node_modules/popper.js/dist/popper.min.js"></script> -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.validate.min.js"></script>
   <script src="assets/js/custom.js"></script>

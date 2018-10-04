@@ -144,6 +144,15 @@ nav {
 input[type=text].error,input[type=email].error{
     border-color: red;
 }
+input[type=radio].error{
+    display: inline-block !important;
+}
+input[type=radio] + label.error{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: none;
+}
 .mat-icon.mat-primary{
     color: $primary-color !important;
 }
@@ -273,7 +282,10 @@ a{
     background-color: $primary-color;
     border-color: $primary-color !important;
 }
-
+.bordered-radio-buttons input:checked + label.error{
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
 .bordered-radio-buttons input:checked + label:after{
 	content: "\2713";
 	width: 30px;
@@ -286,6 +298,11 @@ a{
 	position: absolute;
 	top: -10px;
 	right: -10px;
+}
+
+.bordered-radio-buttons input:checked + label.error:after{
+    display: none;
+    background: transparent
 }
 
 @keyframes click-wave {

@@ -4,19 +4,22 @@ $(document).ready(function () {
         debug: true,
         success: "valid"
     });
+
     $("#planSelectForm").validate();
     $("#memberDetailsForm").validate();
     $("#additionsForm").validate();
     $("#checkOutForm").validate();
 
+    $('.custom-error').hide();
     $('#planSelectForm').on('submit', function (e) {
         e.preventDefault();
         if ($(this).valid() == true) {
             nextFrom(); // switch to next form
-            // $('#memberDetails-tab').prepend('<i class="fas fa-check text-white"></i>')
-        } else {
-            // showAlert();
-        }
+            $('.error').text('')
+        } 
+        $('.error').text('Please Select an Option.')
+        $('.valid').text('')
+        
     })
 
     $('#memberDetailsForm').on('submit', function (e) {
@@ -54,9 +57,7 @@ $(document).ready(function () {
 
     //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-
         var $target = $(e.target);
-
         if ($target.parent().hasClass('disabled')) {
             return false;
         }

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="../node_modules/mustache/mustache.min.js"></script>
+    </head>
+<body onload="loadUser()">
+    <header id="header">loading</header>
+<!-- <div id="target">Loading...</div>
+<script id="template" type="x-tmpl-mustache">
+Hello {{ name }}!
+</script> -->
+
+<script>
+    //     function loadUser() {
+    //   var template = $('#template').html();
+    //   Mustache.parse(template);   // optional, speeds up future uses
+    //   var rendered = Mustache.render(template, {name: "Luke"});
+    //   $('#target').html(rendered);
+    // }
+
+    function loadUser() {
+  $.get('header.htm', function(template) {
+    var rendered = Mustache.render(template, {name: "Akif"});
+    $('#header').html(rendered);
+  });
+}
+    
+    </script>
+ <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
+
