@@ -8,8 +8,8 @@
 
   <!-- Bootstrap CSS -->
   <!-- build:css assets/css/style-buldle.min.css -->
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/sidebar.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- endbuild -->
@@ -48,11 +48,6 @@
 
     <!-- Page Content  -->
     <div id="content">
-
-      <!-- <a id="sidebarCollapse">
-        <i class="fas fa-align-left"></i>
-        <span>Toggle Sidebar</span>
-      </a> -->
 
       <!-- HEADER -->
       <header>
@@ -138,16 +133,12 @@
                   <div class="tab-pane fade show active" id="selectPlan" role="tabpanel" aria-labelledby="home-tab">
                     <form action="" id="planSelectForm">
                       <div class="card shadow-sm rounded-0 p-3 mb-3">
-                        <ng-template matStepLabel class="d-none">Select Plan</ng-template>
                         <div class="form-group row">
                           <div class="col-sm-4 d-flex">
-                            <i class="fas fa-check-square mt-1"></i>
+                            <i class="fas fa-check-square mt-1 form-check-icon"></i>
                             <div class="ml-1">
                               <h4 class="mb-0">MEMBERSHIP</h4>
                               <small>Select A Membership Plan</small>
-                              <i class="form-error custom-error" id="memberShipError">
-                                Please Select an Option.
-                              </i>
                             </div>
                           </div>
                           <div class="col-sm-8">
@@ -169,10 +160,10 @@
                             </div>
                             <div class="radio bordered-radio-buttons d-flex justify-content-around">
                               <label class="mr-3">
-                                <input type="radio" class="option-input radio" name="membership" id="travel" value="travel" required/> TRAVEL
+                                <input type="radio" class="option-input radio" name="membership" id="travel" value="TRAVEL" required/> TRAVEL
                               </label>
                               <label>
-                                <input type="radio" class="option-input radio" name="membership" id="totalCare" value="totalcare" /> TOTALCARE
+                                <input type="radio" class="option-input radio" name="membership" id="totalCare" value="TOTALCARE" /> TOTALCARE
                               </label>
                             </div>
                           </div>
@@ -180,7 +171,7 @@
                         <div class="dropdown-divider"></div>
                         <div class="form-group row mt-2">
                           <div class="col-sm-4 d-flex">
-                            <i class="fas fa-check-square mt-1"></i>
+                            <i class="fas fa-check-square mt-1  form-check-icon"></i>
                             <div class="ml-1">
                               <h4 class="mb-0">TYPE</h4>
 
@@ -189,16 +180,16 @@
                           <div class="col-sm-8">
                             <div class="radio bordered-radio-buttons d-block d-sm-flex justify-content-between mt-2">
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="type" id="indivisual" value="indivisual" required/> INDIVISUAL
+                                <input type="radio" class="option-input radio" name="type" id="indivisual" value="INDIVISUAL" required/> INDIVISUAL
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="type" id="family" value="family" /> FAMILY
+                                <input type="radio" class="option-input radio" name="type" id="family" value="FAMILY" /> FAMILY
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="type" id="student" value="student" /> STUDENT
+                                <input type="radio" class="option-input radio" name="type" id="student" value="STUDENT" /> STUDENT
                               </label>
                               <label class="d-block d-sm-inline-block mb-2 shadow-sm">
-                                <input type="radio" class="option-input radio" name="type" id="age 75-85" value="age 75-85" /> AGE 75-85
+                                <input type="radio" class="option-input radio" name="type" id="age 75-85" value="AGE 75-85" /> AGE 75-85
                               </label>
                             </div>
                             <p>Individual Travel Memberships cover members of all nationalities under the age of 75 (85 with
@@ -208,7 +199,7 @@
                         <div class="dropdown-divider"></div>
                         <div class="form-group row mt-2">
                           <div class="col-sm-4 d-flex">
-                            <i class="fas fa-check-square mt-1"></i>
+                            <i class="fas fa-check-square mt-1 form-check-icon"></i>
                             <div class="ml-1">
                               <h4 class="mb-0">TERM</h4>
 
@@ -234,7 +225,7 @@
                         <div class="dropdown-divider"></div>
                         <div class="form-group row mt-2">
                           <div class="col-sm-4 d-flex">
-                            <i class="fas fa-check-square mt-1"></i>
+                            <i class="fas fa-check-square mt-1 form-check-icon"></i>
                             <div class="ml-1">
                               <h4 class="mb-0">MAX TRIP LENGTH</h4>
                               <small>You may take as many trips as you like. Select the maximum number of days per trip.</small>
@@ -787,7 +778,7 @@
                       <td>
                         <i class="fas fa-check"></i>
                       </td>
-                      <td>Membership</td>
+                      <td id="membership-td">Membership</td>
                       <td>
                         &nbsp;
                       </td>
@@ -796,7 +787,7 @@
                       <td>
                         <i class="fas fa-check"></i>
                       </td>
-                      <td>Type</td>
+                      <td id="type-td">Type</td>
                       <td>
                         &nbsp;
                       </td>
@@ -805,7 +796,7 @@
                       <td>
                         <i class="fas fa-check"></i>
                       </td>
-                      <td>Term</td>
+                      <td id="term-td">Term</td>
                       <td>
                         &nbsp;
                       </td>
@@ -814,7 +805,7 @@
                       <td>
                         <i class="fas fa-check"></i>
                       </td>
-                      <td>Max Trip Length</td>
+                      <td id="maxTripLength-td">Max Trip Length</td>
                       <td>
                         &nbsp;
                       </td>
@@ -864,15 +855,16 @@
 
 
     </div>
-  </div>
 
+  </div>
   <div class="overlay"></div>
+
 
 
 
   <!-- Optional JavaScript -->
   <!--build:js assets/js/script-buldle.min.js -->
-  <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <!-- <script src="../node_modules/popper.js/dist/popper.min.js"></script> -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.validate.min.js"></script>

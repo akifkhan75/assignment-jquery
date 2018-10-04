@@ -1,10 +1,11 @@
 $(document).ready(function () {
-
+    // init validator
     $.validator.setDefaults({
         debug: true,
         success: "valid"
     });
 
+    // validate forms
     $("#planSelectForm").validate();
     $("#memberDetailsForm").validate();
     $("#additionsForm").validate();
@@ -113,6 +114,34 @@ $(document).ready(function () {
         $('.collapse.in').toggleClass('in');
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
+
+    // change form icons and summary on radio select
+    $('#planSelectForm input[type=radio]').on('change',function(){
+        switch($(this).attr('name')){
+            case  'membership' :
+            $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>');
+            $('#membership-td').prev('td').addClass('active-icon');
+            $('input[name=membership]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            break;
+            case  'type' :
+            $('#type-td').next('td').html('<strong>'+$(this).val()+'</strong>');
+            $('#type-td').prev('td').addClass('active-icon');
+            $('input[name=type]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            break;
+            case  'term' :
+            $('#term-td').next('td').html('<strong>'+$(this).val()+'</strong>');
+            $('#term-td').prev('td').addClass('active-icon');
+            $('input[name=term]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            break;
+            case  'maxTripLength' :
+            $('#maxTripLength-td').next('td').html('<strong>'+$(this).val()+'</strong>');
+            $('#maxTripLength-td').prev('td').addClass('active-icon');
+            $('input[name=maxTripLength]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            break;
+
+        }
+        console.log('radio value',$(this).val())
+    })
     
 });
 

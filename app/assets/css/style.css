@@ -194,6 +194,9 @@ a :hover {
 .form-group .input-group-text .mat-icon {
   color: #fff; }
 
+.form-check-icon {
+  font-size: 1.2rem; }
+
 .input-group-text {
   background: #d61535; }
 
@@ -248,7 +251,7 @@ a :hover {
 
 .bordered-radio-buttons input:checked + label {
   background-color: #d61535;
-  border-color: #d61535 !important; }
+  border: solid 2px #d61535; }
 
 .bordered-radio-buttons input:checked + label.error {
   background-color: transparent !important;
@@ -273,15 +276,15 @@ a :hover {
 
 @keyframes click-wave {
   0% {
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     opacity: 0.35;
     position: relative; }
   100% {
-    height: 200px;
-    width: 200px;
-    margin-left: -80px;
-    margin-top: -80px;
+    height: 90px;
+    width: 90px;
+    margin-left: -33px;
+    margin-top: -33px;
     opacity: 0; } }
 
 .option-input {
