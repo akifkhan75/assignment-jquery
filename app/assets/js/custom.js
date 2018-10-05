@@ -124,8 +124,11 @@ $(document).ready(function () {
             type : {title:'Type', value : 'Not Selected'},
             term : {title:'Term', value: 'Not Selected'},
             maxTripLength: {title:'Max Trip Lingth', value: 'Not Selected'}
-        }
+        },
+        totalMembershipAmount : '0.00'
     };
+
+    var membershipAmount = 0;
     // change form icons and summary on radio select
     $('#planSelectForm input[type=radio]').on('change',function(){
         switch($(this).attr('name')){
@@ -257,12 +260,12 @@ function summaryTemplate(data){
                         <input type="checkbox" class="option-input checkbox"> Auto Renew
                       </label>
                     </div>
-                    <mat-icon color="primary">help</mat-icon>
+                    <i class="fas fa-question-circle active-icon"></i>
                   </div>
                   <div class="dropdown-divider"></div>
                   <div class="my-2">
                     <h5>Membership</h5>
-                    <h4>$ 0.00</h4>
+                    <h4>$ {{totalMembershipAmount}}</h4>
                   </div>
                   <div class="dropdown-divider"></div>
                   <div class="my-2">
