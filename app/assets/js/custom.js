@@ -184,6 +184,7 @@ $(document).ready(function () {
 
 function nextFrom() {
     var $active = $('.wizard .nav-tabs li.active');
+    $active.find('a .fas').remove();
     $active.removeClass('active').addClass('disabled');
     $active.find('a').prepend('<i class="fas fa-check text-white mr-2"></i>');
     $active.next().removeClass('disabled').addClass('active');
