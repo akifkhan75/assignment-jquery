@@ -22,10 +22,16 @@ gulp.task('sass',function(){
 	}));
 });
 
-gulp.task('watch', ['sass','useref','browserSync','images'], function(){
+gulp.task('watch', ['sass','useref','browserSync','images','fonts'], function(){
 	gulp.watch('app/assets/sass/*.scss', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/assets/js/*.js', browserSync.reload);
+});
+
+// Fonts
+gulp.task('fonts', function() {
+    return gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/*'])
+		.pipe(gulp.dest('dist/assets/webfonts'));
 });
 
 gulp.task('browserSync', function(){

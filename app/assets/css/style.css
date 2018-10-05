@@ -412,6 +412,10 @@ footer {
     width: 65%; }
   h5 {
     font-size: 1rem; }
+  .form-group {
+    margin-bottom: 0; }
+  .form-control {
+    margin-bottom: 1rem; }
   .wizard-steps .nav-tabs {
     display: block !important; }
   .wizard-steps .nav-tabs .nav-item {
