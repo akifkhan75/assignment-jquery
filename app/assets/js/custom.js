@@ -117,11 +117,20 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
     
+    var data = {
+        activeClass: '',
+        items: {
+            membership: {title:'Membership', value: 'Not Selected'},
+            type : {title:'Type', value : 'Not Selected'},
+            term : {title:'Term', value: 'Not Selected'},
+            maxTripLength: {title:'Max Trip Lingth', value: 'Not Selected'}
+        }
+    };
     // change form icons and summary on radio select
     $('#planSelectForm input[type=radio]').on('change',function(){
         switch($(this).attr('name')){
             case  'membership' :
-            $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            data.items.membership.value = $(this).val();// add checked radio value to summary
             $('#membership-td').prev('td').addClass('active-icon'); // change selected item icon color 
             $('input[name=membership]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             $('input[name=membership]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
@@ -134,7 +143,7 @@ $(document).ready(function () {
                 $('input[name=membership]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
                 return false;
             }
-            $('#type-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            data.items.type.value = $(this).val();// add checked radio value to summary
             $('#type-td').prev('td').addClass('active-icon'); // change selected item icon color
             $('input[name=type]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             $('input[name=type]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
@@ -147,7 +156,7 @@ $(document).ready(function () {
                 $('input[name=type]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
                 return false;
             }
-            $('#term-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            data.items.term.value = $(this).val();// add checked radio value to summary
             $('#term-td').prev('td').addClass('active-icon'); // change selected item icon color
             $('input[name=term]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             $('input[name=term]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
@@ -160,13 +169,14 @@ $(document).ready(function () {
                 $('input[name=term]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
                 return false;
             }
-            $('#maxTripLength-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            data.items.maxTripLength.value = $(this).val();// add checked radio value to summary
             $('#maxTripLength-td').prev('td').addClass('active-icon'); // change selected item icon color
             $('input[name=maxTripLength]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             break;
         }
+        summaryTemplate(data)
     })
-    
+    summaryTemplate(data)
 });
 
 function nextFrom() {
@@ -195,4 +205,71 @@ function prevTab(elem) {
 function showSnackbar(msg) {
     $('#snackbar').addClass('show').text(msg);
     setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
+}
+
+function summaryTemplate(data){
+    var data = data;
+    var template = `
+    <h4 class="mb-2">Summary</h4>
+                  <div class="dropdown-divider"></div>
+                  <table class="table-sm mt-2 mb-4">
+                    <tr>
+                      <td>
+                        <i class="fas fa-check"></i>
+                      </td>
+                      <td id="{{items.membership.title}}-td">{{items.membership.title}}</td>
+                      <td>
+                        <strong>{{items.membership.value}}</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fas fa-check"></i>
+                      </td>
+                      <td id="{{items.type.title}}-td">{{items.type.title}}</td>
+                      <td>
+                      <strong>{{items.type.value}}</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fas fa-check"></i>
+                      </td>
+                      <td id="{{items.term.title}}-td">{{items.term.title}}</td>
+                      <td>
+                      <strong>{{items.term.value}}</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <i class="fas fa-check"></i>
+                      </td>
+                      <td id="{{items.maxTripLength.title}}-td">{{items.maxTripLength.title}}</td>
+                      <td>
+                      <strong>{{items.maxTripLength.value}}</strong>
+                      </td>
+                    </tr>
+                  </table>
+                  <div class="dropdown-divider"></div>
+                  <div class="d-flex align-items-center justify-content-between my-3">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" class="option-input checkbox"> Auto Renew
+                      </label>
+                    </div>
+                    <mat-icon color="primary">help</mat-icon>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="my-2">
+                    <h5>Membership</h5>
+                    <h4>$ 0.00</h4>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <div class="my-2">
+                    <h5>Grand Total</h5>
+                    <h4>$ 0.00</h4>
+                  </div>
+    `
+    var html = Mustache.to_html(template,data);
+    $('#summary').html(html)
 }

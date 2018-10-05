@@ -20,31 +20,9 @@
 <body>
 
   <div class="wrapper">
+
     <!-- Sidebar  -->
-    <nav id="sidebar">
-      <div class="d-flex justify-content-end">
-        <div id="dismiss">
-          <i class="fas fa-arrow-left"></i>
-        </div>
-      </div>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active text-uppercase" href="#">
-            personal memberships
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-uppercase" href="#">
-            Enterprise
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-uppercase" href="#">
-            Partnerships
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <nav id="sidebar">Loading</nav>
 
     <!-- Page Content  -->
     <div id="content">
@@ -66,22 +44,7 @@
               </a>
             </li>
           </ul>
-          <ul class="navbar-nav ml-auto d-none d-sm-flex">
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT US
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">MEDIA</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">LOGIN</a>
-            </li>
-          </ul>
+          <ul class="navbar-nav ml-auto d-none d-sm-flex" id="topMenu">loading..</ul>
         </nav>
       </header>
       <!-- / HEADER -->
@@ -91,7 +54,6 @@
         <div class="container">
           <div class="wizard">
             <div class="wizard-steps mb-3">
-              <!-- <div class="connecting-line"></div> -->
               <ul class="nav nav-tabs d-table w-100" id="membershipForm" role="tablist">
                 <li class="nav-item d-table-cell active">
                   <a class="nav-link rounded-0 active" id="selectPlan-tab" data-toggle="tab" href="#selectPlan" role="tab" aria-controls="selectPlan"
@@ -770,66 +732,8 @@
                 <!-- /tab content -->
               </div>
               <div class="col-sm-3">
-                <div class="card shadow-sm rounded-0 d-none d-sm-block">
-                  <h4 class="mb-2">Summary</h4>
-                  <div class="dropdown-divider"></div>
-                  <table class="table-sm mt-2 mb-4">
-                    <tr>
-                      <td>
-                        <i class="fas fa-check"></i>
-                      </td>
-                      <td id="membership-td">Membership</td>
-                      <td>
-                        &nbsp;
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="fas fa-check"></i>
-                      </td>
-                      <td id="type-td">Type</td>
-                      <td>
-                        &nbsp;
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="fas fa-check"></i>
-                      </td>
-                      <td id="term-td">Term</td>
-                      <td>
-                        &nbsp;
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="fas fa-check"></i>
-                      </td>
-                      <td id="maxTripLength-td">Max Trip Length</td>
-                      <td>
-                        &nbsp;
-                      </td>
-                    </tr>
-                  </table>
-                  <div class="dropdown-divider"></div>
-                  <div class="d-flex align-items-center justify-content-between my-3">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" class="option-input checkbox"> Auto Renew
-                      </label>
-                    </div>
-                    <mat-icon color="primary">help</mat-icon>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <div class="my-2">
-                    <h5>Membership</h5>
-                    <h4>$ 0.00</h4>
-                  </div>
-                  <div class="dropdown-divider"></div>
-                  <div class="my-2">
-                    <h5>Grand Total</h5>
-                    <h4>$ 0.00</h4>
-                  </div>
+                <div class="card shadow-sm rounded-0 d-none d-sm-block" id="summary">
+                  
                 </div>
               </div>
             </div>
@@ -841,34 +745,25 @@
       </section>
       <!-- / ENTOLLMENT FORM -->
 
-      <style>
-      </style>
-
-
       <!-- FOOTER -->
-      <footer>
-        <div class="container">
-          footer contents
-        </div>
-      </footer>
+      <footer>Loading..</footer>
       <!-- / FOOTER -->
 
 
     </div>
 
   </div>
-  <div id="snackbar" class="bg-warning shadow"></div>
+  <div id="snackbar" class="bg-danger shadow"></div>
   <div class="overlay"></div>
-
-
-
 
   <!-- Optional JavaScript -->
   <!--build:js assets/js/script-buldle.min.js -->
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <!-- <script src="../node_modules/popper.js/dist/popper.min.js"></script> -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/mustache/mustache.min.js"></script>
   <script src="assets/js/jquery.validate.min.js"></script>
+  <script src="assets/js/templates.js"></script>
   <script src="assets/js/custom.js"></script>
   <!-- endbuild -->
 </body>
