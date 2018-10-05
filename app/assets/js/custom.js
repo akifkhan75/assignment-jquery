@@ -17,12 +17,12 @@ $(document).ready(function () {
         e.preventDefault();
         if ($(this).valid() == true) {
             nextFrom(); // switch to next form
-            $('.error').text('')
+            $('.error').text('');
         } else {
-            showSnackbar('Please Select All Required Options')
+            showSnackbar('Please Select All Required Options');
         }
-        $('.error').text('Please Select an Option.')
-        $('.valid').text('')
+        $('.error').text('Please Select an Option.');
+        $('.valid').text('');
         
     })
 
@@ -32,9 +32,9 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            showSnackbar('Please Fill All Required Fields')
+            showSnackbar('Please Fill All Required Fields');
         }
-    })
+    });
 
     $('#additionsForm').on('submit', function (e) {
         e.preventDefault();
@@ -42,9 +42,9 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            showSnackbar('Please Fill All Required Fields')
+            showSnackbar('Please Fill All Required Fields');
         }
-    })
+    });
 
     $('#checkOutForm').on('submit', function (e) {
         e.preventDefault();
@@ -52,9 +52,9 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            showSnackbar('Please Fill All Required Fields')
+            showSnackbar('Please Fill All Required Fields');
         }
-    })
+    });
 
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
@@ -87,23 +87,23 @@ $(document).ready(function () {
     $('#showMannualAddressForm').on('click',function(){
         $('.google-address').hide();
         $('.mannual-address').show();
-    })
+    });
     // show google address form
     $('#showGoogleAddressForm').on('click',function(){
         $('.mannual-address').hide();
         $('.google-address').show();
-    })
+    });
 
     // show hide family members form
     $('.familyMembersForm').hide();
     $('#addFamilyMembers').on('click',function(){
         $('.familyMembersForm').show();
         $('#addFamilyMembers').hide();
-    })
+    });
     $('#hideFamilyMembersForm').on('click',function(){
         $('.familyMembersForm').hide();
         $('#addFamilyMembers').show();
-    })
+    });
 
     // sidebar
     $('#dismiss, .overlay').on('click', function () {
@@ -178,9 +178,9 @@ $(document).ready(function () {
             $('input[name=maxTripLength]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             break;
         }
-        summaryTemplate(data)
+        summaryTemplate(data);
     })
-    summaryTemplate(data)
+    summaryTemplate(data);
 });
 
 function nextFrom() {
