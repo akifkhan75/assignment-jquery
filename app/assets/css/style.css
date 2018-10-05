@@ -197,6 +197,9 @@ a :hover {
 .form-check-icon {
   font-size: 1.2rem; }
 
+.form-group-error {
+  border: solid 1px red; }
+
 .input-group-text {
   background: #d61535; }
 

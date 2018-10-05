@@ -234,6 +234,9 @@ a{
 .form-check-icon{
     font-size: 1.2rem;
 }
+.form-group-error{
+    @include border(solid, 1px, red);
+}
 .input-group-text{
     background: $primary-color;
 }

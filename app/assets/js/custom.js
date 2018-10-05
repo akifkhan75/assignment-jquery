@@ -17,7 +17,9 @@ $(document).ready(function () {
         if ($(this).valid() == true) {
             nextFrom(); // switch to next form
             $('.error').text('')
-        } 
+        } else {
+            showSnackbar('Please Select All Required Options')
+        }
         $('.error').text('Please Select an Option.')
         $('.valid').text('')
         
@@ -29,7 +31,7 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            // showAlert();
+            showSnackbar('Please Fill All Required Fields')
         }
     })
 
@@ -39,7 +41,7 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            // showAlert();
+            showSnackbar('Please Fill All Required Fields')
         }
     })
 
@@ -49,7 +51,7 @@ $(document).ready(function () {
             console.log('valid');
             nextFrom(); // switch to next form
         } else {
-            // showAlert();
+            showSnackbar('Please Fill All Required Fields')
         }
     })
 
@@ -114,41 +116,54 @@ $(document).ready(function () {
         $('.collapse.in').toggleClass('in');
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
-
-    // disable radio buttons
-    // $('#planSelectForm .form-group:first-child')
     
     // change form icons and summary on radio select
     $('#planSelectForm input[type=radio]').on('change',function(){
-        var prevRadio = $(this).closest('.form-group').prevAll('.form-group').find('input[type=radio]').is(':checked');
-        if(prevRadio == false){
-            // prevRadio.attr(':checked',false);
-            var msg = 'Please Select Previous Value';
-            showSnackbar(msg)
-            return false
-        }
         switch($(this).attr('name')){
             case  'membership' :
-            $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>');
-            $('#membership-td').prev('td').addClass('active-icon');
-            $('input[name=membership]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            $('#membership-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            $('#membership-td').prev('td').addClass('active-icon'); // change selected item icon color 
+            $('input[name=membership]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
+            $('input[name=membership]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
             break;
             case  'type' :
-            $('#type-td').next('td').html('<strong>'+$(this).val()+'</strong>');
-            $('#type-td').prev('td').addClass('active-icon');
-            $('input[name=type]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            // check if previous radio is checked
+            if($('input[name=membership]').is(':checked') == false){
+                $('.type-radio input[type=radio]').prop('checked', false);
+                showSnackbar('Please Select MemberShip'); // show snackbar alert
+                $('input[name=membership]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
+                return false;
+            }
+            $('#type-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            $('#type-td').prev('td').addClass('active-icon'); // change selected item icon color
+            $('input[name=type]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
+            $('input[name=type]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
             break;
             case  'term' :
-            $('#term-td').next('td').html('<strong>'+$(this).val()+'</strong>');
-            $('#term-td').prev('td').addClass('active-icon');
-            $('input[name=term]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            // check if previous radio is checked
+            if($('input[name=type]').is(':checked') == false){
+                $('.term-radio input[type=radio]').prop('checked', false);
+                showSnackbar('Please Select Type'); // show snackbar alert
+                $('input[name=type]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
+                return false;
+            }
+            $('#term-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            $('#term-td').prev('td').addClass('active-icon'); // change selected item icon color
+            $('input[name=term]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
+            $('input[name=term]').closest('.form-group').removeClass('form-group-error'); // remove error class from form-group
             break;
             case  'maxTripLength' :
-            $('#maxTripLength-td').next('td').html('<strong>'+$(this).val()+'</strong>');
-            $('#maxTripLength-td').prev('td').addClass('active-icon');
-            $('input[name=maxTripLength]').closest('.form-group').find('.form-check-icon').addClass('active-icon');
+            // check if previous radio is checked
+            if($('input[name=term]').is(':checked') == false){
+                $('.maxTripLength-radio input[type=radio]').prop('checked', false);
+                showSnackbar('Please Select Term');  // show snackbar alert
+                $('input[name=term]').closest('.form-group').addClass('form-group-error'); // add error class to previous formgroup
+                return false;
+            }
+            $('#maxTripLength-td').next('td').html('<strong>'+$(this).val()+'</strong>'); // add checked radio value to summary
+            $('#maxTripLength-td').prev('td').addClass('active-icon'); // change selected item icon color
+            $('input[name=maxTripLength]').closest('.form-group').find('.form-check-icon').addClass('active-icon'); // add active class to section icon
             break;
-
         }
     })
     
