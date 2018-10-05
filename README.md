@@ -4,4 +4,3 @@
 
 * Clone or Download Project
 * run npm install
-* run gulp or gulp build // for build

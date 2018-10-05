@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     // init validator
     $.validator.setDefaults({
@@ -273,7 +274,7 @@ function summaryTemplate(data){
                     <h5>Grand Total</h5>
                     <h4>$ 0.00</h4>
                   </div>
-    `
+    `;
     var html = Mustache.to_html(template,data);
     $('#summary').html(html)
 }

@@ -20,7 +20,7 @@ function topNav(){
                 </a>
             </li>
         {{/items}}
-    `
+    `;
     html = Mustache.to_html(template,data);
     $('#topMenu').html(html)
 } //
@@ -45,7 +45,7 @@ function sideBar(){
         </li>
         {{/items}}
       </ul>
-    `
+    `;
     html = Mustache.to_html(template,data);
     $('#sidebar').html(html)
 } //
@@ -59,7 +59,7 @@ function footerTemplate(){
     <div class="container text-center">
         {{dummyText}}
     </div>
-    `
+    `;
     html = Mustache.to_html(template,data);
     $('footer').html(html)
 } //
